@@ -11,9 +11,9 @@ class Sandbox
      public function index()
      {
          // load views
-         require APP . 'view/_templates/header.php';
+         //require APP . 'view/_templates/header.php';
          require APP . 'view/sandbox/forminput.php';
-         require APP . 'view/_templates/footer.php';
+        // require APP . 'view/_templates/footer.php';
      }
 
     public function hack()
