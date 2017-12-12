@@ -6,4 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'alreadyInitializedException' => $vendorDir . '/owasp/csrf-protector-php/libs/csrf/csrfprotector.php',
+    'baseJSFileNotFoundExceptio' => $vendorDir . '/owasp/csrf-protector-php/libs/csrf/csrfprotector.php',
+    'configFileNotFoundException' => $vendorDir . '/owasp/csrf-protector-php/libs/csrf/csrfprotector.php',
+    'cookieConfig' => $vendorDir . '/owasp/csrf-protector-php/libs/csrf/csrfprotector.php',
+    'csrfProtector' => $vendorDir . '/owasp/csrf-protector-php/libs/csrf/csrfprotector.php',
+    'incompleteConfigurationException' => $vendorDir . '/owasp/csrf-protector-php/libs/csrf/csrfprotector.php',
+    'jsFileNotFoundException' => $vendorDir . '/owasp/csrf-protector-php/libs/csrf/csrfprotector.php',
+    'logDirectoryNotFoundException' => $vendorDir . '/owasp/csrf-protector-php/libs/csrf/csrfprotector.php',
+    'logFileWriteError' => $vendorDir . '/owasp/csrf-protector-php/libs/csrf/csrfprotector.php',
 );

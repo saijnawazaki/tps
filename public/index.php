@@ -22,7 +22,7 @@
 // DIRECTORY_SEPARATOR adds a slash to the end of the path
 define('ROOT', dirname(__DIR__) . DIRECTORY_SEPARATOR);
 // set a constant that holds the project's "application" folder, like "/var/www/application".
-define('APP', ROOT . 'application' . DIRECTORY_SEPARATOR);
+define('APP', ROOT . 'app' . DIRECTORY_SEPARATOR);
 
 // This is the auto-loader for Composer-dependencies (to load tools into your project).
 require ROOT . 'vendor/autoload.php';
@@ -30,8 +30,18 @@ require ROOT . 'vendor/autoload.php';
 // load application config (error reporting etc.)
 require APP . 'config/config.php';
 
+require APP . 'libs/seihelper.php';
+
+
+include_once ROOT .'/vendor/owasp/csrf-protector-php/libs/csrf/csrfprotector.php';
+
+//Initialise CSRFGuard library
+csrfProtector::init();
+
+
+
 // load application class
-use Mini\Core\Application;
+use Sei\Core\Application;
 
 // start the application
 $app = new Application();

@@ -1,9 +1,13 @@
 {
-    "name": "panique/mini",
-    "description": "MINI - an extremely simple naked PHP application",
+    "name": "saijnawazaki/seifuku",
+    "description": "Seifuku - an extremely simple naked PHP application",
     "type": "project",
     "license": "MIT",
     "authors": [
+        {
+            "name": "Julianto Chai",
+            "email": "saijnawazaki@gmail.com"
+        },
         {
             "name": "Chris Panique",
             "email": "panique@firemail.de"
@@ -12,14 +16,17 @@
             "name": "John Dias",
             "email": "joaodias@noctus.org"
         }
+
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+		"owasp/csrf-protector-php": "dev-master"
+	},
     "autoload":
     {
         "psr-4":
         {
-            "Mini\\" : "application/"
+            "Sei\\" : "app/"
         }
     }
 }
