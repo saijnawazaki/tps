@@ -1,2 +1,3 @@
-Seifuku
-Simple PHP MVC Framework based panique/mini and jaonoctus/mini
+#Seifuku
+-
+-Simple PHP MVC Framework based panique/mini and jaonoctus/mini
