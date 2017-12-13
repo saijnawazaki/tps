@@ -15,7 +15,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-lg-offset-4 col-xs-12 col-xs-offset-0">
-
+          <?php include(APP . 'view/_templates/_hana.php') ?>
           <div class="mf-panel mf-clear-top-4x mf-clear-bottom-4x">
             <h1 class="page-header text-center">Link</h1>
             <form method="post" action="<?= URL; ?>linker">
