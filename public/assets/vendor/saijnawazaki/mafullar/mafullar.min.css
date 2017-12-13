@@ -5927,6 +5927,22 @@ button.mf-close {
 /*# sourceMappingURL=bootstrap.css.map */
 
 /*# MAFULLAR */
+.mf-clear-top{
+  margin-top: 10px;
+}
+
+.mf-clear-top-4x{
+  margin-top: 40px;
+}
+
+.mf-clear-bottom{
+  margin-bottom: 10px;
+}
+
+.mf-clear-bottom-4x{
+  margin-bottom: 40px;
+}
+
 .mf-footer-black{
 padding-top: 50px;
 padding-bottom: 50px;
