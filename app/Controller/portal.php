@@ -15,7 +15,7 @@ class Portal
 
      public function index()
      {
-        echo $_SESSION['tps_username'];
+        require APP . 'view/portal/index.php';
      }
 
 

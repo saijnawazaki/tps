@@ -3734,16 +3734,16 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  color: #555;
-  background-color: #e7e7e7;
+  color: #fff;
+  background-color: #802c2b;
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #777;
+    color: #fff;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #333;
+    color: #cecece;
     background-color: transparent;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
@@ -5927,6 +5927,44 @@ button.mf-close {
 /*# sourceMappingURL=bootstrap.css.map */
 
 /*# MAFULLAR */
+.mf-pin {
+    display: inline-block;
+    height: 32px;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(0,0,0,0.6);
+    line-height: 32px;
+    padding: 0 12px;
+    border-radius: 16px;
+    background-color: #e4e4e4;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.mf-pin img {
+    float: left;
+    margin: 0 8px 0 -12px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+}
+
+.mf-clear-top-1x{
+  margin-top: 10px;
+}
+
+.mf-clear-bottom-1x{
+  margin-bottom: 10px;
+}
+
+.mf-clear-top-2x{
+  margin-top: 20px;
+}
+
+.mf-clear-bottom-2x{
+  margin-bottom: 20px;
+}
+
 .mf-clear-top{
   margin-top: 10px;
 }

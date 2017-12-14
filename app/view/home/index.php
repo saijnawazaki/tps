@@ -12,6 +12,8 @@
 
   </head>
   <body>
+    <?php include(APP . 'view/_templates/_header.php') ?>
+
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-lg-offset-4 col-xs-12 col-xs-offset-0">
