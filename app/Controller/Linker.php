@@ -19,7 +19,7 @@ class Linker
               session_regenerate_id();
               $_SESSION['tps_username'] = $hanami->username;
               $_SESSION['tps_fullname'] = $hanami->fullname;
-              $_SESSION['tps_type_account'] = $hanami->fullname;
+              $_SESSION['tps_type_account'] = $hanami->type_account;
 
               $nanami = $data->checkplayer($_POST['username']);
               if($nanami != 0){

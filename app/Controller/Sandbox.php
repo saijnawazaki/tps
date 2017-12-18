@@ -18,7 +18,9 @@ class Sandbox
 
     public function hack()
     {
-      echo 'ASU';
+      // $Vdata = file_get_contents(URL .'arcade/tpsservertime');
+      // echo $Vdata;
+      echo 'HACKK';
     }
 
     public function s_sess(){

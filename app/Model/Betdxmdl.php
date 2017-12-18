@@ -27,9 +27,38 @@ class Betdxmdl extends Model
         return $query->fetchAll();
     }
 
+    public function getbdxlog()
+    {
+        $sql = "SELECT * FROM betdx_log ORDER BY ts_konten DESC LIMIT 10";
+        $query = $this->db->prepare($sql);
+
+        $query->execute();
+
+        return $query->fetchAll();
+    }
+
+    public function getbdxlog_detail()
+    {
+        $sql = "SELECT * FROM betdx_log ORDER BY ts_konten DESC";
+        $query = $this->db->prepare($sql);
+
+        $query->execute();
+
+        return $query->fetchAll();
+    }
+
     public function cekbdxbet($x)
     {
       $sql = "SELECT username FROM betdx_player WHERE username = :x";
+      $query = $this->db->prepare($sql);
+      $parameters = array(':x' => $x);
+      $query->execute($parameters);
+      return $query->rowCount();
+    }
+
+    public function cekbetnya($x)
+    {
+      $sql = "SELECT username FROM betdx_player WHERE bdx_bet = :x";
       $query = $this->db->prepare($sql);
       $parameters = array(':x' => $x);
       $query->execute($parameters);

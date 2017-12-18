@@ -26,6 +26,15 @@ class Linkermdl extends Model
         return $query->fetch();
     }
 
+    public function getuserdx($x)
+    {
+        $sql = "SELECT * FROM pengguna, pengguna_permainan WHERE pengguna_permainan.username = pengguna.username AND pengguna.username = :x";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':x' => $x);
+        $query->execute($parameters);
+        return $query->fetch();
+    }
+
     public function checkplayer($x)
     {
         $sql = "SELECT username FROM pengguna_permainan WHERE username = :x";

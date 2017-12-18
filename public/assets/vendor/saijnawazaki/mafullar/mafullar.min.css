@@ -5927,6 +5927,68 @@ button.mf-close {
 /*# sourceMappingURL=bootstrap.css.map */
 
 /*# MAFULLAR */
+
+/* MOTTO */
+.mf-circle {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+.mf-circle .mf-circle-border {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  border-radius: 50%;
+  border: 2px dashed #c04443;
+  -webkit-animation-name: Mf-Rotate;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: Mf-Rotate;
+  -moz-animation-duration: 20s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: Mf-Rotate;
+  -ms-animation-duration: 20s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+}
+.mf-circle-rotate {
+  padding: 20px 30px;
+  font-size: 56px;
+}
+.mf-circle-static {
+
+  text-align: center;
+}
+@-webkit-keyframes Mf-Rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes Mf-Rotate {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-ms-keyframes Mf-Rotate {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+  }
+}
+/* #XD */
 .mf-pin {
     display: inline-block;
     height: 32px;
