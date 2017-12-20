@@ -1,3 +1,3 @@
 TPS
 -
-Simple PHP MVC Framework based panique/mini and jaonoctus/mini
+Small games center for Giveaway
