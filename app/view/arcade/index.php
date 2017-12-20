@@ -15,7 +15,32 @@
     <?php include(APP . 'view/_templates/_header.php') ?>
 
     <div class="container">
-      :DX
+      <h1 class="page-header"><a href="<?= URL ?>portal"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Arcade</h1>
+      <ol class="breadcrumb">
+        <li><a href="<?= URL ?>portal">Portal</a></li>
+        <li class="active">Arcade</li>
+      </ol>
+
+      <div class="div">
+        <div class="col-lg-3 col-xs-12">
+          <div class="mf-panel text-center">
+            <a href="<?= URL ?>arcade/betdx" class="mf-link-fix">
+            <i class="fa fa-sticky-note-o fa-5x" aria-hidden="true"></i>
+            <h4>BetDX</h4>
+            <hr style="max-width: 100px;">
+            <p>
+              Bet---!
+            </p>
+            <?php
+            if($_SESSION['tps_type_account'] == 'admin'){
+                echo '<hr><a href="'.URL.'arcade/betdxreset" class="btn btn-primary">RESET</a>';
+            }
+            ?>
+          </a>
+          </div>
+        </div>
+      </div>
+
     </div>
     <?php include(APP . 'view/_templates/_footer.php') ?>
 

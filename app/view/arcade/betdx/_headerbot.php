@@ -15,7 +15,7 @@
         <span class="label label-primary"><i class="fa fa-star" aria-hidden="true"></i> RANK:  <?= Seihelper::tps_rank($s_linker->exp) ?> (<?= $s_linker->exp ?> EXP)</span>
         <span class="label label-primary"><i class="fa fa-jpy" aria-hidden="true"></i> GOLD: <?= $s_linker->gold ?></span>
         <br>
-        <span class="label label-primary"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> BET: <?= $s_betdx->bdx_rbet ?></span>
+        <span class="label label-primary"><i class="fa fa-sticky-note-o" aria-hidden="true"></i> BET: <?php if(!isset($s_betdx->bdx_rbet)){ echo 'N/A'; }else{ echo $s_betdx->bdx_rbet; } ?></span>
       </div>
     </div>
 

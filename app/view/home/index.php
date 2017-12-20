@@ -32,6 +32,9 @@
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">Link</button>
               </div>
+              <div class="form-group">
+                <a href="<?= URL ?>register" class="btn btn-info" style="width:100%">Register</a>
+              </div>
             </form>
           </div>
         </div>

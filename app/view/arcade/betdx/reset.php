@@ -18,35 +18,35 @@
       <form method="post" action="<?= URL ?>arcade/betdxresetpost">
         <div class="form-group">
         <label>Real</label>
-        <input type="text" name="bdx_real" class="form-control">
+        <input type="text" name="bdx_real" class="form-control" value="1">
         </div>
         <div class="form-group">
         <label>Max</label>
-        <input type="text" name="bdx_max" class="form-control">
+        <input type="text" name="bdx_max" class="form-control" value="10">
       </div>
       <div class="form-group">
         <label>Min</label>
-        <input type="text" name="bdx_min" class="form-control">
+        <input type="text" name="bdx_min" class="form-control" value="1">
       </div>
       <div class="form-group">
         <label>EXP</label>
-        <input type="text" name="bdx_exp" class="form-control">
+        <input type="text" name="bdx_exp" class="form-control" value="10">
       </div>
       <div class="form-group">
         <label>GOLD</label>
-        <input type="text" name="bdx_gold" class="form-control">
+        <input type="text" name="bdx_gold" class="form-control" value="20">
       </div>
       <div class="form-group">
         <label>GIFT</label>
-        <input type="text" name="bdx_gift" class="form-control">
+        <input type="text" name="bdx_gift" class="form-control" value="TPS">
       </div>
       <div class="form-group">
         <label>SPONSOR</label>
-        <input type="text" name="bdx_sponsor" class="form-control">
+        <input type="text" name="bdx_sponsor" class="form-control" value="TPS">
       </div>
       <div class="form-group">
         <label>END</label>
-        <input type="text" name="bdx_end" class="form-control">
+        <input type="text" name="bdx_end" class="form-control" value="<?= date('Y-m-d H:i:s') ?>">
       </div>
       <div class="form-group">
         <input type="submit" class="btn btn-primary">

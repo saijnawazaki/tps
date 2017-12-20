@@ -6,7 +6,64 @@ use Sei\Core\Model;
 
 class Linkermdl extends Model
 {
+    /*  REG */
+    public function insuser($username, $password, $fullname, $ta)
+    {
+        $sql = "INSERT INTO pengguna (username, password, fullname, type_account) VALUES (:username, :password, :fullname, :ta)";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':username' => $username, ':password' => $password, ':fullname' => $fullname, ':ta' => $ta);
+        $query->execute($parameters);
+    }
 
+    public function insuserdetail($username, $lineid, $nohp, $email, $pp)
+    {
+        $sql = "INSERT INTO pengguna_detail (username, lineid, nohp, email, pp) VALUES (:username, :lineid, :nohp, :email, :pp)";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':username' => $username, ':lineid' => $lineid, ':nohp' => $nohp, ':email' => $email, ':pp' => $pp);
+        $query->execute($parameters);
+    }
+
+    public function cekuserdx($x)
+    {
+        $sql = "SELECT username FROM pengguna WHERE username = :x";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':x' => $x);
+        $query->execute($parameters);
+
+        return $query->rowCount();
+    }
+
+    public function cekuserlinedx($x)
+    {
+        $sql = "SELECT username FROM pengguna_detail WHERE lineid = :x";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':x' => $x);
+        $query->execute($parameters);
+
+        return $query->rowCount();
+    }
+
+    public function cekuseremaildx($x)
+    {
+        $sql = "SELECT username FROM pengguna_detail WHERE email = :x";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':x' => $x);
+        $query->execute($parameters);
+
+        return $query->rowCount();
+    }
+
+    public function cekusernohpdx($x)
+    {
+        $sql = "SELECT username FROM pengguna_detail WHERE nohp = :x";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':x' => $x);
+        $query->execute($parameters);
+
+        return $query->rowCount();
+    }
+
+    /* LOGIN */
     public function checkuser($x, $z)
     {
         $sql = "SELECT username FROM pengguna WHERE username = :x AND password = :z";
@@ -22,6 +79,25 @@ class Linkermdl extends Model
         $sql = "SELECT * FROM pengguna WHERE username = :x AND password = :z";
         $query = $this->db->prepare($sql);
         $parameters = array(':x' => $x, ':z' => $z);
+        $query->execute($parameters);
+        return $query->fetch();
+    }
+
+    public function getuserdeta($x)
+    {
+        $sql = "SELECT * FROM pengguna_detail WHERE username = :x";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':x' => $x);
+        $query->execute($parameters);
+        return $query->fetch();
+    }
+
+    public function getuserdetafull($x)
+    {
+        $sql = "SELECT a.username, a.fullname, b.exp, b.gold, c.pp  FROM pengguna a, pengguna_permainan b, pengguna_detail c
+        WHERE a.username = b.username AND a.username = c.username AND a.username = :x";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':x' => $x);
         $query->execute($parameters);
         return $query->fetch();
     }

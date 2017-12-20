@@ -23,7 +23,7 @@ foreach ($nando as $player) {
 }
 
 if($huh == 0){
-  echo '<h3>TIRED</h3>Nobody win this round';
+  echo '<h3>TIRED</h3>Nobody win this round<hr><a href="'.URL.'arcade/betdxoffline" class="btn btn-primary">RANDOM</a>';
 }else{
   echo '<h3>WINNER</h3>';
   foreach ($nando as $player) {
@@ -36,6 +36,10 @@ if($huh == 0){
             </div>';
     }
   }
+  if($_SESSION['tps_type_account'] == 'admin'){
+      echo '<hr><a href="'.URL.'arcade/betdxoffline" class="btn btn-primary">OFFLINE & PLAYOFF</a>';
+  }
+
 }
 ?>
 <hr style="max-width: 200px;">

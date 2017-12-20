@@ -75,6 +75,32 @@ class Betdxmdl extends Model
       return $query->fetch();
     }
 
+    public function clearbdxlog(){
+      //TRUNCATE TABLE
+      $sql = "TRUNCATE TABLE betdx_log";
+      $query = $this->db->prepare($sql);
+
+      $query->execute();
+    }
+
+    public function clearbdxplayer(){
+      //TRUNCATE TABLE
+      $sql = "TRUNCATE TABLE betdx_player";
+      $query = $this->db->prepare($sql);
+
+      $query->execute();
+    }
+
+    public function getbdxbetpower($x)
+    {
+      $sql = "SELECT bdx_power FROM betdx_engine WHERE bdx_id = :x";
+      $query = $this->db->prepare($sql);
+      $parameters = array(':x' => $x);
+      $query->execute($parameters);
+
+      return $query->fetch();
+    }
+
     public function insbdxbet($y, $x, $z)
     {
       $sql = "INSERT INTO betdx_player(username, bdx_bet, bdx_rbet) VALUES (:y, :x, :z)";
@@ -83,9 +109,41 @@ class Betdxmdl extends Model
       $query->execute($parameters);
     }
 
+    public function insbdxbetlog($konten, $icon)
+    {
+      $sql = "INSERT INTO betdx_log(log_konten, icon_konten) VALUES (:konten, :icon)";
+      $query = $this->db->prepare($sql);
+      $parameters = array(':konten' => $konten, ':icon' => $icon);
+      $query->execute($parameters);
+    }
+
+    public function upbdxbetengine($z, $x, $c, $v, $b, $n, $m, $a, $s, $d)
+    {
+      $sql = "UPDATE betdx_engine SET bdx_max = :z, bdx_min = :x, bdx_real = :c, bdx_exp = :v, bdx_gold = :b, bdx_gift = :n, bdx_sponsor = :m, bdx_end = :a, bdx_power = :d WHERE bdx_id = :s";
+      $query = $this->db->prepare($sql);
+      $parameters = array(':z' => $z, ':x' => $x, ':c' => $c, ':v' => $v, ':b' => $b, ':n' => $n, ':m' => $m, ':a' => $a, ':s' => $s, ':d' => $d);
+      $query->execute($parameters);
+    }
+
     public function upbdxbet($x, $z)
     {
       $sql = "UPDATE betdx_player SET bdx_bet = :x WHERE username = :z";
+      $query = $this->db->prepare($sql);
+      $parameters = array(':x' => $x, ':z' => $z);
+      $query->execute($parameters);
+    }
+
+    public function uprealbet($x, $z)
+    {
+      $sql = "UPDATE betdx_engine SET bdx_real = :x WHERE bdx_id = :z";
+      $query = $this->db->prepare($sql);
+      $parameters = array(':x' => $x, ':z' => $z);
+      $query->execute($parameters);
+    }
+
+    public function upbetdxpower($x, $z)
+    {
+      $sql = "UPDATE betdx_engine SET bdx_power = :x WHERE bdx_id = :z";
       $query = $this->db->prepare($sql);
       $parameters = array(':x' => $x, ':z' => $z);
       $query->execute($parameters);

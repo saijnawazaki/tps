@@ -2,23 +2,23 @@
 
 namespace Sei\Controller;
 
-use Sei\Model\Linkermdl;
+use Sei\Model\Universalmdl;
 
-class Portal
+class achievement
 {
   public function __construct()
   {
     if(!isset($_SESSION['tps_username'])){
       header('location: ' . URL . 'linker/logoutforce');
     }
-  }
 
+  }
+  
      public function index()
      {
-       $dx = new Linkermdl();
-       $p_sesi = $_SESSION['tps_username'];
-       $sp_naniga = $dx->getuserdetafull($p_sesi);
-        require APP . 'view/portal/index.php';
+        $cx = new Universalmdl();
+        $hanashi = $cx->getachie();
+        require APP . 'view/achievement/index.php';
      }
 
 

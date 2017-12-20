@@ -5989,6 +5989,15 @@ button.mf-close {
   }
 }
 /* #XD */
+
+.mf-link-fix{
+  color: #333;
+}
+
+.mf-link-fix:hover{
+  text-decoration: none;
+}
+
 .mf-pin {
     display: inline-block;
     height: 32px;

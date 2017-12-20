@@ -46,7 +46,7 @@ $( "#bdxplayer" ).load( "<?= URL ?>arcade/bdxplayer" );
           <div class="mf-panel mf-clear-top-2x mf-clear-bottom-2x text-center">
             <?php include(APP . 'view/_templates/_hana.php') ?>
 
-          
+
             <?php include(APP . 'view/arcade/betdx/_timer.php') ?>
             <span class="label label-primary" data-toggle="tooltip" title="Maksimum"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i> <?= $nande->bdx_max; ?></span>
             <span class="label label-primary" data-toggle="tooltip" title="Minimum"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i> <?= $nande->bdx_min; ?></span>
@@ -80,7 +80,7 @@ $( "#bdxplayer" ).load( "<?= URL ?>arcade/bdxplayer" );
             <h4>Log</h4>
             <hr>
             <div id="logbdx"></div>
-            <button data-toggle="collapse" data-target="#dxplus" class="btn btn-default mf-clear-top-1x mf-clear-bottom-1x" style="width: 100%;">MORE <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+
 
               <div id="dxplus" class="collapse">
                 <?php
@@ -89,6 +89,7 @@ $( "#bdxplayer" ).load( "<?= URL ?>arcade/bdxplayer" );
                 }
                 ?>
               </div>
+              <button data-toggle="collapse" data-target="#dxplus" class="btn btn-default mf-clear-top-1x mf-clear-top-1x" style="width: 100%;">MORE <i class="fa fa-caret-down" aria-hidden="true"></i></button>
           </div>
         </div>
       </div>
