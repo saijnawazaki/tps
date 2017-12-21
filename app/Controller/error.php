@@ -19,6 +19,6 @@ class error
      */
     public function index()
     {
-        echo 'FATAL';
+        require APP . 'view/home/fatal.php';
     }
 }

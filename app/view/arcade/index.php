@@ -15,7 +15,7 @@
     <?php include(APP . 'view/_templates/_header.php') ?>
 
     <div class="container">
-      <h1 class="page-header"><a href="<?= URL ?>portal"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Arcade</h1>
+      <h1 class="page-header"><a href="<?= URL ?>portal"><i class="fa fa-arrow-left" aria-hidden="true"></i> Portal</a> <i class="fa fa-angle-right" aria-hidden="true"></i> Arcade</h1>
       <ol class="breadcrumb">
         <li><a href="<?= URL ?>portal">Portal</a></li>
         <li class="active">Arcade</li>

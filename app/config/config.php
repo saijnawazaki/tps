@@ -41,7 +41,7 @@ if (ENVIRONMENT == 'development' || ENVIRONMENT == 'dev') {
  * then replace this line with full URL (and sub-folder) and a trailing slash.
  */
 
-define('sei_default_controller', 'HomeController');
+define('sei_default_controller', 'HomeController'); //This Default Controller
 
 define('URL_PUBLIC_FOLDER', 'public');
 define('URL_PROTOCOL', 'http://');

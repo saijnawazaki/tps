@@ -101,6 +101,16 @@ class Betdxmdl extends Model
       return $query->fetch();
     }
 
+    public function getbdxenginev($x)
+    {
+      $sql = "SELECT * FROM betdx_engine WHERE bdx_id = :x";
+      $query = $this->db->prepare($sql);
+      $parameters = array(':x' => $x);
+      $query->execute($parameters);
+
+      return $query->fetch();
+    }
+
     public function insbdxbet($y, $x, $z)
     {
       $sql = "INSERT INTO betdx_player(username, bdx_bet, bdx_rbet) VALUES (:y, :x, :z)";
@@ -117,11 +127,11 @@ class Betdxmdl extends Model
       $query->execute($parameters);
     }
 
-    public function upbdxbetengine($z, $x, $c, $v, $b, $n, $m, $a, $s, $d)
+    public function upbdxbetengine($z, $x, $c, $v, $b, $n, $m, $a, $s, $d, $f)
     {
-      $sql = "UPDATE betdx_engine SET bdx_max = :z, bdx_min = :x, bdx_real = :c, bdx_exp = :v, bdx_gold = :b, bdx_gift = :n, bdx_sponsor = :m, bdx_end = :a, bdx_power = :d WHERE bdx_id = :s";
+      $sql = "UPDATE betdx_engine SET bdx_max = :z, bdx_min = :x, bdx_real = :c, bdx_exp = :v, bdx_gold = :b, bdx_gift = :n, bdx_sponsor = :m, bdx_end = :a, bdx_power = :d, bdx_req = :f WHERE bdx_id = :s";
       $query = $this->db->prepare($sql);
-      $parameters = array(':z' => $z, ':x' => $x, ':c' => $c, ':v' => $v, ':b' => $b, ':n' => $n, ':m' => $m, ':a' => $a, ':s' => $s, ':d' => $d);
+      $parameters = array(':z' => $z, ':x' => $x, ':c' => $c, ':v' => $v, ':b' => $b, ':n' => $n, ':m' => $m, ':a' => $a, ':s' => $s, ':d' => $d, ':f' => $f);
       $query->execute($parameters);
     }
 

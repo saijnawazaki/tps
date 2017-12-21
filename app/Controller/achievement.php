@@ -13,13 +13,15 @@ class achievement
     }
 
   }
-  
+
      public function index()
      {
         $cx = new Universalmdl();
         $hanashi = $cx->getachie();
         require APP . 'view/achievement/index.php';
      }
+
+
 
 
 }

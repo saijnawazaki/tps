@@ -34,10 +34,13 @@ if($huh == 0){
             <img src="'.URL.'assets/images/static/tps_nopp.png" style="background-color: #fff">
             '.$player->fullname.'
             </div>';
+      $f_username = $player->username;
+      $f_fullname = $player->fullname;
     }
   }
   if($_SESSION['tps_type_account'] == 'admin'){
-      echo '<hr><a href="'.URL.'arcade/betdxoffline" class="btn btn-primary">OFFLINE & PLAYOFF</a>';
+      echo '<hr><a href="'.URL.'arcade/betdxoffline" class="btn btn-primary">OFFLINE & PLAYOFF</a> ';
+      echo '<a href="'.URL.'user?id='.$f_username.'" target="_blank" class="btn btn-warning">PROFILE: '.$f_fullname.'</a>';
   }
 
 }

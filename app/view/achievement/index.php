@@ -26,7 +26,7 @@
     <?php include(APP . 'view/_templates/_header.php') ?>
 
     <div class="container">
-      <h1 class="page-header"><a href="<?= URL ?>portal"><i class="fa fa-arrow-left" aria-hidden="true"></i></a> Achievement</h1>
+      <h1 class="page-header"><a href="<?= URL ?>portal"><i class="fa fa-arrow-left" aria-hidden="true"></i> Portal</a> <i class="fa fa-angle-right" aria-hidden="true"></i> Achievement</h1>
       <ol class="breadcrumb">
         <li><a href="<?= URL ?>portal">Portal</a></li>
         <li class="achievement">Achievement</li>

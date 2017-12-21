@@ -86,7 +86,7 @@ public function betdxresetpost(){
     $dx = new Betdxmdl();
     $dx->clearbdxlog();
     $dx->clearbdxplayer();
-    $dx->upbdxbetengine($_POST['bdx_max'], $_POST['bdx_min'], $_POST['bdx_real'], $_POST['bdx_exp'], $_POST['bdx_gold'], $_POST['bdx_gift'], $_POST['bdx_sponsor'], $_POST['bdx_end'], 1, 1);
+    $dx->upbdxbetengine($_POST['bdx_max'], $_POST['bdx_min'], $_POST['bdx_real'], $_POST['bdx_exp'], $_POST['bdx_gold'], $_POST['bdx_gift'], $_POST['bdx_sponsor'], $_POST['bdx_end'], 1, 1, $_POST['bdx_req']);
     $dx->insbdxbetlog('<strong>Game dimulai</strong>. Sekarang Anda dapat memulai melakukan <strong>Bet</strong>. Tunggu sampai waktu habis, jika beruntung, nomor Anda dan nomor tebakan sama maka Andalah pemenangnya!', 'fa-power-off');
     header('location: ' . URL . 'arcade/betdx');
   }
@@ -135,14 +135,46 @@ $nando = $dx->getbdxplayer();
      public function betdx()
      {
        $dx = new Betdxmdl();
+       $fx = new Linkermdl();
        $fafa = $dx->getbdxbetpower(1);
 
        if($fafa->bdx_power == 1){
-         $nande = $dx->getbdxengine();
-         $nando = $dx->getbdxplayer();
-         //$nanda = $dx->getbdxlog();
-         $nandi = $dx->getbdxlog_detail();
-         require APP . 'view/arcade/betdx/index.php';
+         $koko = $dx->getbdxenginev(1);
+         $shoko = 0;
+
+         if($koko->bdx_req == null){
+           $shoko = 1;
+         }else{
+           //:D
+           $mochi = $fx->getuserdetafullfx($_SESSION['tps_username']);
+           $tote = $koko->bdx_req;
+           if($mochi->$tote != null){
+             $shoko = 1;
+           }
+         }
+
+         if($shoko == 1){
+           $nande = $dx->getbdxengine();
+           $nando = $dx->getbdxplayer();
+           //$nanda = $dx->getbdxlog();
+           $nandi = $dx->getbdxlog_detail();
+           require APP . 'view/arcade/betdx/index.php';
+         }else{
+           //REQ
+           switch ($koko->bdx_req) {
+              case 'lineid':
+                  $v_req = 'Line ID';
+                  break;
+              case 'nohp':
+                  $v_req = 'Phone Number';
+                  break;
+              case 'email':
+                  $v_req = 'Email';
+                  break;
+          }
+
+           require APP . 'view/arcade/req.php';
+         }
        }elseif($fafa->bdx_power == 0){
          require APP . 'view/arcade/offline.php';
        }elseif($fafa->bdx_power == 2){

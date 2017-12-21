@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2017 at 10:26 AM
+-- Generation Time: Dec 21, 2017 at 08:00 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -36,15 +36,16 @@ CREATE TABLE `betdx_engine` (
   `bdx_gift` varchar(50) DEFAULT NULL,
   `bdx_sponsor` varchar(100) DEFAULT NULL,
   `bdx_end` datetime DEFAULT NULL,
-  `bdx_power` char(1) NOT NULL
+  `bdx_power` char(1) NOT NULL,
+  `bdx_req` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `betdx_engine`
 --
 
-INSERT INTO `betdx_engine` (`bdx_id`, `bdx_max`, `bdx_min`, `bdx_real`, `bdx_exp`, `bdx_gold`, `bdx_gift`, `bdx_sponsor`, `bdx_end`, `bdx_power`) VALUES
-(1, 10, 1, 2, 10, 20, 'TPS', 'TPS', '2017-12-19 16:11:45', '1');
+INSERT INTO `betdx_engine` (`bdx_id`, `bdx_max`, `bdx_min`, `bdx_real`, `bdx_exp`, `bdx_gold`, `bdx_gift`, `bdx_sponsor`, `bdx_end`, `bdx_power`, `bdx_req`) VALUES
+(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', NULL);
 
 -- --------------------------------------------------------
 
@@ -59,15 +60,6 @@ CREATE TABLE `betdx_log` (
   `ts_konten` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `betdx_log`
---
-
-INSERT INTO `betdx_log` (`id_log`, `log_konten`, `icon_konten`, `ts_konten`) VALUES
-(1, '<strong>Game dimulai</strong>. Sekarang Anda dapat memulai melakukan <strong>Bet</strong>. Tunggu sampai waktu habis, jika beruntung, nomor Anda dan nomor tebakan sama maka Andalah pemenangnya!', 'fa-power-off', '2017-12-19 08:40:56'),
-(2, '<strong>Julianto Chai</strong> bergabung.', 'fa-sign-in', '2017-12-19 08:46:31'),
-(3, '<strong>Julianto Chai</strong> meng-bet <strong>2</strong>.', 'fa-thumb-tack', '2017-12-19 08:46:31');
-
 -- --------------------------------------------------------
 
 --
@@ -79,16 +71,6 @@ CREATE TABLE `betdx_player` (
   `bdx_bet` int(11) DEFAULT NULL,
   `bdx_rbet` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `betdx_player`
---
-
-INSERT INTO `betdx_player` (`username`, `bdx_bet`, `bdx_rbet`) VALUES
-('bagasnero', 1, 0),
-('esabagus', 4, 1),
-('paw', 3, 6),
-('saijnawazaki', 2, 4);
 
 -- --------------------------------------------------------
 
@@ -111,11 +93,7 @@ CREATE TABLE `pengguna` (
 --
 
 INSERT INTO `pengguna` (`username`, `password`, `fullname`, `type_account`, `live_account`, `up_account`, `session_id`) VALUES
-('bagasnero', '6512bd43d9caa6e02c990b0a82652dca', 'Bhagas Gustaf Van Nero', 'user', '2017-12-14 08:38:41', '2017-12-19 08:20:38', 'ctjsgiloebqdal6n88t078ck82'),
-('esabagus', '6512bd43d9caa6e02c990b0a82652dca', 'Esa Bagus', 'user', '2017-12-14 08:41:38', '2017-12-15 06:37:02', NULL),
-('jun', '6512bd43d9caa6e02c990b0a82652dca', 'Mashuda Mawardi Putra', 'user', '2017-12-14 08:41:07', '2017-12-15 06:37:12', NULL),
-('paw', '6512bd43d9caa6e02c990b0a82652dca', 'Ahmad Fawzi Pratama', 'user', '2017-12-14 08:39:28', '2017-12-15 06:37:16', NULL),
-('saijnawazaki', '6512bd43d9caa6e02c990b0a82652dca', 'Julianto Chai', 'admin', '2017-12-13 02:54:50', '2017-12-20 04:17:53', '0iialuhuekuvu65acrphb7g8g0');
+('admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', 'admin', '2017-12-13 02:54:50', '2017-12-21 06:59:08', NULL);
 
 -- --------------------------------------------------------
 
@@ -136,11 +114,7 @@ CREATE TABLE `pengguna_detail` (
 --
 
 INSERT INTO `pengguna_detail` (`username`, `lineid`, `nohp`, `email`, `pp`) VALUES
-('bagasnero', 'line2', '081322222222', 'bhagas@gmail.com', 'no_pp.png'),
-('esabagus', 'line4', '081344444444', 'esabag@emailb.com', 'no_pp.png'),
-('jun', 'linejun', '08122137462161261', 'jun@jun.com', 'no_pp.png'),
-('paw', 'line3', '081333333333', 'paw@yahoo.com', 'no_pp.png'),
-('saijnawazaki', 'line1', '081311111111', 'saijnawazaki@manastudioid.com', 'no_pp.png');
+('admin', NULL, NULL, NULL, 'no_pp.png');
 
 -- --------------------------------------------------------
 
@@ -159,11 +133,7 @@ CREATE TABLE `pengguna_permainan` (
 --
 
 INSERT INTO `pengguna_permainan` (`username`, `exp`, `gold`) VALUES
-('bagasnero', 51, 41),
-('esabagus', 23, 32423),
-('jun', 123123, 34343),
-('paw', 42, 32),
-('saijnawazaki', 1070, 1120);
+('admin', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -178,18 +148,6 @@ CREATE TABLE `penghargaan` (
   `achi_konten` varchar(200) DEFAULT NULL,
   `timestamp` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `penghargaan`
---
-
-INSERT INTO `penghargaan` (`id_achi`, `achi_name`, `username`, `achi_konten`, `timestamp`) VALUES
-('MS/TPS/ACHI/20171212121212', 'Anti', 'saijnawazaki', 'MOST LOL', '2017-12-20 07:29:42'),
-('MS/TPS/ACHI/20171220092415', 'BetDX Winner', 'saijnawazaki', 'BetDX Winner with bet 2', '2017-12-20 08:24:15'),
-('MS/TPS/ACHI/20171220092509', 'BetDX Winner', 'saijnawazaki', 'BetDX Winner with bet 2', '2017-12-20 08:25:09'),
-('MS/TPS/ACHI/20171220093141', 'BetDX Winner', 'saijnawazaki', 'BetDX Winner with bet 2 (MAX: 10 and MIN: 1) and got TPS from TPS also 10 EXP and 20 GOLD', '2017-12-20 08:31:41'),
-('MS/TPS/ACHI/20171220093430', 'BetDX Winner', 'saijnawazaki', 'BetDX Winner with bet 2 (MAX: 10, MIN: 1, and PARTICIPLES: 4) and got TPS from TPS also 10 EXP and 20 GOLD', '2017-12-20 08:34:30'),
-('MS/TPS/ACHI/20171220094122', 'BetDX Winner', 'saijnawazaki', 'BetDX Winner with bet 2 (MAX: 10, MIN: 1, and PARTICIPLES: 4) and got TPS from TPS also 10 EXP and 20 GOLD', '2017-12-20 08:41:22');
 
 --
 -- Indexes for dumped tables
@@ -248,7 +206,7 @@ ALTER TABLE `penghargaan`
 -- AUTO_INCREMENT for table `betdx_log`
 --
 ALTER TABLE `betdx_log`
-  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

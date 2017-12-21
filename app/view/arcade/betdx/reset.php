@@ -41,6 +41,15 @@
         <input type="text" name="bdx_gift" class="form-control" value="TPS">
       </div>
       <div class="form-group">
+        <label>REQ.</label>
+        <select name="bdx_req" class="form-control">
+          <option value="">No</option>
+          <option value="lineid">Line ID</option>
+          <option value="nohp">Phone Number</option>
+          <option value="email">Email</option>
+        </select>
+      </div>
+      <div class="form-group">
         <label>SPONSOR</label>
         <input type="text" name="bdx_sponsor" class="form-control" value="TPS">
       </div>

@@ -7,6 +7,8 @@ use Sei\Core\Model;
 class Universalmdl extends Model
 {
 
+
+
     public function getachie()
     {
         $sql = "SELECT a.id_achi, a.achi_name, a.username, b.fullname, a.achi_konten, a.timestamp FROM penghargaan a, pengguna b WHERE a.username = b.username ORDER BY timestamp DESC";
