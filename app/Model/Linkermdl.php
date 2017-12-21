@@ -43,6 +43,16 @@ class Linkermdl extends Model
         return $query->rowCount();
     }
 
+    public function cekuserlinedxfx($x)
+    {
+        $sql = "SELECT username FROM pengguna_detail WHERE lineid = :x";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':x' => $x);
+        $query->execute($parameters);
+
+        return $query->fetch();
+    }
+
     public function cekuseremaildx($x)
     {
         $sql = "SELECT username FROM pengguna_detail WHERE email = :x";
@@ -53,6 +63,16 @@ class Linkermdl extends Model
         return $query->rowCount();
     }
 
+    public function cekuseremaildxfx($x)
+    {
+        $sql = "SELECT username FROM pengguna_detail WHERE email = :x";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':x' => $x);
+        $query->execute($parameters);
+
+        return $query->fetch();
+    }
+
     public function cekusernohpdx($x)
     {
         $sql = "SELECT username FROM pengguna_detail WHERE nohp = :x";
@@ -61,6 +81,16 @@ class Linkermdl extends Model
         $query->execute($parameters);
 
         return $query->rowCount();
+    }
+
+    public function cekusernohpdxfx($x)
+    {
+        $sql = "SELECT username FROM pengguna_detail WHERE nohp = :x";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':x' => $x);
+        $query->execute($parameters);
+
+        return $query->fetch();
     }
 
     /* LOGIN */
@@ -102,6 +132,16 @@ class Linkermdl extends Model
         return $query->fetch();
     }
 
+    public function getuserdetafullfx($x)
+    {
+        $sql = "SELECT a.username, a.fullname, c.pp, c.lineid, c.nohp, c.email  FROM pengguna a, pengguna_detail c
+        WHERE a.username = c.username AND a.username = :x";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':x' => $x);
+        $query->execute($parameters);
+        return $query->fetch();
+    }
+
     public function getuserdx($x)
     {
         $sql = "SELECT * FROM pengguna, pengguna_permainan WHERE pengguna_permainan.username = pengguna.username AND pengguna.username = :x";
@@ -136,6 +176,33 @@ class Linkermdl extends Model
         $sql = "UPDATE pengguna SET session_id = :x WHERE username = :z";
         $query = $this->db->prepare($sql);
         $parameters = array(':x' => $x, ':z' => $z);
+        $query->execute($parameters);
+    }
+
+    public function upuserdata($user, $fullname)
+    {
+
+        $sql = "UPDATE pengguna SET fullname = :fullname WHERE username = :user";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':fullname' => $fullname, ':user' => $user);
+        $query->execute($parameters);
+    }
+
+    public function upuserdatapass($user, $fullname, $pass)
+    {
+
+        $sql = "UPDATE pengguna SET fullname = :fullname, password = :pass WHERE username = :user";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':fullname' => $fullname, ':user' => $user, ':pass' => $pass);
+        $query->execute($parameters);
+    }
+
+    public function upuserdatadeta($user, $lineid, $nohp, $email)
+    {
+
+        $sql = "UPDATE pengguna_detail SET lineid = :lineid, nohp = :nohp, email = :email WHERE username = :user";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':lineid' => $lineid, ':nohp' => $nohp, ':user' => $user, ':email' => $email);
         $query->execute($parameters);
     }
 

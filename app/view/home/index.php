@@ -30,10 +30,18 @@
                 <input type="password" class="form-control" id="password" name="password">
               </div>
               <div class="form-group">
-                <button type="submit" class="btn btn-primary">Link</button>
+                <button type="submit" class="btn btn-primary" style="width:100%">LINK</button>
               </div>
               <div class="form-group">
-                <a href="<?= URL ?>register" class="btn btn-info" style="width:100%">Register</a>
+                <div class="row">
+                  <div class="col-lg-6 col-xs-6">
+                    <a href="<?= URL ?>register" class="btn btn-info" style="width:100%">REGISTER</a>
+                  </div>
+                  <div class="col-lg-6 col-xs-6">
+                    <a href="<?= URL ?>resetpassword" class="btn btn-warning" style="width:100%">RESET PASSWORD</a>
+                  </div>
+                </div>
+
               </div>
             </form>
           </div>

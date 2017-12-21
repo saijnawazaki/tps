@@ -25,7 +25,7 @@ if(isset($_SESSION['tps_username'])){
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <img style="width: 20px; height: 20px; display: inline;" class="img-circle" src="<?= URL ?>repo/user/pp/<?= $_SESSION['tps_pp']; ?>"> <?= $_SESSION['tps_fullname']; ?> <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              
+              <li><a href="<?= URL ?>user/edit">Edit Profile</a></li>
               <li><a href="<?= URL ?>linker/logout">Logout</a></li>
             </ul>
           </li>
