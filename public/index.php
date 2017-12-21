@@ -39,8 +39,6 @@ ini_set('session.save_handler', 'files');
 //Initialise CSRFGuard library
 csrfProtector::init();
 
-
-
 // load application class
 use Sei\Core\Application;
 

@@ -54,7 +54,7 @@
               <hr>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">Create</button><br><br>
-                <small class="text-muted">Dengan menekan "CREATE" Anda menyatakan menyutujui dan memahami semua isi dari <a href="<?= URL ?>page/tos">Terms of Service</a> dan <a href="<?= URL ?>page/pp">Privacy Policy</a></small>
+                <small class="text-muted">Dengan menekan "CREATE" Anda menyatakan menyutujui dan memahami semua isi dari <a href="<?= URL ?>page/tos">Terms of Service</a>, <a href="<?= URL ?>page/eula">End User License Agreement</a> dan <a href="<?= URL ?>page/pp">Privacy Policy</a></small>
               </div>
             </form>
           </div>
