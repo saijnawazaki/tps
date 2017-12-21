@@ -1,0 +1,12 @@
+[21-Dec-2017 09:39:57 UTC] PHP Fatal error:  Class '\Sei\Controller\ErrorController' not found in /home/manastud/mesin/tps/app/Core/Application.php on line 37
+[21-Dec-2017 09:50:26 UTC] PHP Fatal error:  Uncaught exception 'configFileNotFoundException' with message 'OWASP CSRFProtector: configuration file not found for CSRFProtector!' in /home/manastud/mesin/tps/vendor/owasp/csrf-protector-php/libs/csrf/csrfprotector.php:183
+Stack trace:
+#0 /home/manastud/public_html/tps/public/index.php(40): csrfProtector::init()
+#1 {main}
+  thrown in /home/manastud/mesin/tps/vendor/owasp/csrf-protector-php/libs/csrf/csrfprotector.php on line 183
+[21-Dec-2017 09:50:26 UTC] PHP Fatal error:  Uncaught exception 'configFileNotFoundException' with message 'OWASP CSRFProtector: configuration file not found for CSRFProtector!' in /home/manastud/mesin/tps/vendor/owasp/csrf-protector-php/libs/csrf/csrfprotector.php:183
+Stack trace:
+#0 /home/manastud/public_html/tps/public/index.php(40): csrfProtector::init()
+#1 {main}
+  thrown in /home/manastud/mesin/tps/vendor/owasp/csrf-protector-php/libs/csrf/csrfprotector.php on line 183
+[21-Dec-2017 09:56:45 UTC] PHP Fatal error:  Class 'Sei\Core\Model' not found in /home/manastud/mesin/tps/app/Model/Linkermdl.php on line 8

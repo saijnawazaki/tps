@@ -22,5 +22,10 @@ class Page
         require APP . 'view/page/pp.php';
      }
 
+     public function eula()
+     {
+        require APP . 'view/page/eula.php';
+     }
+
 
 }

@@ -84,9 +84,10 @@ public function betdxoffline(){
 public function betdxresetpost(){
   if(isset($_POST['bdx_real'])){
     $dx = new Betdxmdl();
+    $p_rand = rand($_POST['bdx_min'], $_POST['bdx_max']);
     $dx->clearbdxlog();
     $dx->clearbdxplayer();
-    $dx->upbdxbetengine($_POST['bdx_max'], $_POST['bdx_min'], $_POST['bdx_real'], $_POST['bdx_exp'], $_POST['bdx_gold'], $_POST['bdx_gift'], $_POST['bdx_sponsor'], $_POST['bdx_end'], 1, 1, $_POST['bdx_req']);
+    $dx->upbdxbetengine($_POST['bdx_max'], $_POST['bdx_min'], $p_rand, $_POST['bdx_exp'], $_POST['bdx_gold'], $_POST['bdx_gift'], $_POST['bdx_sponsor'], $_POST['bdx_end'], 1, 1, $_POST['bdx_req']);
     $dx->insbdxbetlog('<strong>Game dimulai</strong>. Sekarang Anda dapat memulai melakukan <strong>Bet</strong>. Tunggu sampai waktu habis, jika beruntung, nomor Anda dan nomor tebakan sama maka Andalah pemenangnya!', 'fa-power-off');
     header('location: ' . URL . 'arcade/betdx');
   }

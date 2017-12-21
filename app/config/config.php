@@ -27,7 +27,9 @@ if (ENVIRONMENT == 'development' || ENVIRONMENT == 'dev') {
  * "/application" or other folder inside your application or call any other .php file than index.php inside "/public".
  *
  * URL_PROTOCOL:
- * The protocol. Don't change unless you know exactly what you do.
+ * The protocol. Don't change unless you know exactly what you do. This defines the protocol part of the URL, in older
+ * versions of MINI it was 'http://' for normal HTTP and 'https://' if you have a HTTPS site for sure. Now the
+ * protocol-independent '//' is used, which auto-recognized the protocol.
  *
  * URL_DOMAIN:
  * The domain. Don't change unless you know exactly what you do.
@@ -44,7 +46,7 @@ if (ENVIRONMENT == 'development' || ENVIRONMENT == 'dev') {
 define('sei_default_controller', 'HomeController'); //This Default Controller
 
 define('URL_PUBLIC_FOLDER', 'public');
-define('URL_PROTOCOL', 'http://');
+define('URL_PROTOCOL', '//');
 define('URL_DOMAIN', $_SERVER['HTTP_HOST']);
 define('URL_SUB_FOLDER', str_replace(URL_PUBLIC_FOLDER, '', dirname($_SERVER['SCRIPT_NAME'])));
 define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
@@ -54,8 +56,8 @@ define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
  * This is the place where you define your database credentials, database type etc.
  */
 define('DB_TYPE', 'mysql');
-define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'tpsdx');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', '103.28.22.213');
+define('DB_NAME', 'manastud_tps');
+define('DB_USER', 'manastud_tps');
+define('DB_PASS', 'vSM*y_EJKctf');
 define('DB_CHARSET', 'utf8');
