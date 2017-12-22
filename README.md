@@ -4,6 +4,6 @@ Small games center for Giveaway
 -
 ### HOT TO RUN
 
-Import the database in _database folder
+1. Import the database in _database folder
 
-Go
+2. Go
