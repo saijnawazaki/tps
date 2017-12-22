@@ -56,8 +56,8 @@ define('URL', URL_PROTOCOL . URL_DOMAIN . URL_SUB_FOLDER);
  * This is the place where you define your database credentials, database type etc.
  */
 define('DB_TYPE', 'mysql');
-define('DB_HOST', '103.28.22.213');
-define('DB_NAME', 'manastud_tps');
-define('DB_USER', 'manastud_tps');
-define('DB_PASS', 'vSM*y_EJKctf');
+define('DB_HOST', '127.0.0.1');
+define('DB_NAME', 'tpsdx');
+define('DB_USER', 'root');
+define('DB_PASS', '');
 define('DB_CHARSET', 'utf8');
