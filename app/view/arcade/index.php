@@ -32,9 +32,12 @@
               Bet---!
             </p>
             <?php
-            if($_SESSION['tps_type_account'] == 'admin'){
-                echo '<hr><a href="'.URL.'arcade/betdxreset" class="btn btn-primary">RESET</a>';
+            if(isset($_SESSION['tps_type_account'])){
+              if($_SESSION['tps_type_account'] == 'admin'){
+                  echo '<hr><a href="'.URL.'arcade/betdxreset" class="btn btn-primary">RESET</a>';
+              }
             }
+
             ?>
           </a>
           </div>

@@ -25,7 +25,7 @@ class Universalmdl extends Model
         $query = $this->db->prepare($sql);
         $parameters = array(':a' => $id, ':b' => $nama, ':c' => $user, ':d' => $konten);
         $query->execute($parameters);
-        return $query->fetch();
+        
     }
 
     public function getserverdt()

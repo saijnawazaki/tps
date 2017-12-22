@@ -113,7 +113,14 @@ public function betdxreset(){
 public function linkerstatus(){
   $fx = new Linkermdl();
   $dx = new Betdxmdl();
-  $p_sesi = $_SESSION['tps_username'];
+
+  if(isset($_SESSION['tps_username'])){
+      $p_sesi = $_SESSION['tps_username'];
+  }else{
+      $p_sesi = null;
+  }
+
+
   $s_linker = $fx->getuserdx($p_sesi);
   $s_betdx = $dx->getbdxbet($p_sesi);
   require APP . 'view/arcade/betdx/_headerbot.php';
@@ -138,7 +145,11 @@ $nando = $dx->getbdxplayer();
        $dx = new Betdxmdl();
        $fx = new Linkermdl();
        $fafa = $dx->getbdxbetpower(1);
-
+       if(isset($_SESSION['tps_username'])){
+         $p_username = $_SESSION['tps_username'];
+       }else{
+         $p_username = null;
+       }
        if($fafa->bdx_power == 1){
          $koko = $dx->getbdxenginev(1);
          $shoko = 0;
@@ -147,7 +158,7 @@ $nando = $dx->getbdxplayer();
            $shoko = 1;
          }else{
            //:D
-           $mochi = $fx->getuserdetafullfx($_SESSION['tps_username']);
+           $mochi = $fx->getuserdetafullfx($p_username);
            $tote = $koko->bdx_req;
            if($mochi->$tote != null){
              $shoko = 1;
