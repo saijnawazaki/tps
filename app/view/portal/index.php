@@ -24,7 +24,7 @@
           <div class="div">
             <div class="col-lg-3 col-xs-12">
               <a href="<?= URL ?>arcade" class="mf-link-fix">
-              <div class="mf-panel text-center">
+              <div class="mf-panel text-center mf-clear-top-2x mf-clear-bottom-2x">
 
                 <i class="fa fa-gamepad fa-5x" aria-hidden="true"></i>
                 <h4>Arcade</h4>
@@ -39,13 +39,29 @@
 
             <div class="col-lg-3 col-xs-12">
               <a href="<?= URL ?>achievement" class="mf-link-fix">
-              <div class="mf-panel text-center">
+              <div class="mf-panel text-center mf-clear-top-2x mf-clear-bottom-2x">
 
                 <i class="fa fa-trophy fa-5x" aria-hidden="true"></i>
                 <h4>Achievement</h4>
                 <hr style="max-width: 100px;">
                 <p>
                   Achievement
+                </p>
+
+              </div>
+              </a>
+            </div>
+
+
+            <div class="col-lg-3 col-xs-12">
+              <a href="<?= URL ?>portal/namesboard" class="mf-link-fix">
+              <div class="mf-panel text-center mf-clear-top-2x mf-clear-bottom-2x">
+
+                <i class="fa fa-user-circle-o fa-5x" aria-hidden="true"></i>
+                <h4>Names Board</h4>
+                <hr style="max-width: 100px;">
+                <p>
+                  Player List
                 </p>
 
               </div>
