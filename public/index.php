@@ -35,6 +35,7 @@ require APP . 'libs/seihelper.php';
 
 include_once ROOT .'/vendor/owasp/csrf-protector-php/libs/csrf/csrfprotector.php';
 
+ini_set('session.save_handler', 'files');
 //Initialise CSRFGuard library
 csrfProtector::init();
 

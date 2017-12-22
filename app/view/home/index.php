@@ -1,74 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <?php include(APP . 'view/_templates/_meta.php') ?>
 
-        <title>Seifuku</title>
+    <title>TPS</title>
 
-
-        <!-- Styles -->
-        <style>
-            html, body {
-              background-color: #fff;
-              color: #1d5e7d;
-              font-family: Arial, sans-serif;
-              font-weight: 100;
-              height: 100vh;
-              margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-
-            }
+  <?php include(APP . 'view/_templates/_css.php') ?>
+  <?php include(APP . 'view/_templates/_js.php') ?>
 
 
 
+  </head>
+  <body>
+    <?php include(APP . 'view/_templates/_header.php') ?>
 
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 104px;
-            }
-
-            .links > a {
-                color: #1d5e7d;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Seifuku
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 col-xs-12 col-xs-offset-0">
+          <?php include(APP . 'view/_templates/_hana.php') ?>
+          <div class="mf-panel mf-clear-top-4x mf-clear-bottom-4x">
+            <h1 class="page-header text-center">Link</h1>
+            <form method="post" action="<?= URL; ?>linker">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary" style="width:100%">LINK</button>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-6 col-xs-6">
+                    <a href="<?= URL ?>register" class="btn btn-info" style="width:100%">REGISTER</a>
+                  </div>
+                  <div class="col-lg-6 col-xs-6">
+                    <a href="<?= URL ?>resetpassword" class="btn btn-warning" style="width:100%">RESET PASSWORD</a>
+                  </div>
                 </div>
 
-                <div class="links">
-                    <a href="https://github.com/saijnawazaki/seifuku">GitHub</a>
-                </div>
-            </div>
+              </div>
+            </form>
+          </div>
         </div>
-    </body>
+      </div>
+    </div>
+    <?php include(APP . 'view/_templates/_footer.php') ?>
+
+
+
+  </body>
 </html>
