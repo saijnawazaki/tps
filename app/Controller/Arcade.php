@@ -5,7 +5,7 @@ namespace Sei\Controller;
 use Sei\Model\Betdxmdl;
 use Sei\Model\Linkermdl;
 use Sei\Model\Universalmdl;
-
+use Sei\Model\Gadxmdl;
 
 class Arcade
 {
@@ -24,6 +24,50 @@ class Arcade
 
 
 //Universal
+
+//GADX
+public function gadx(){
+  $fx = new Linkermdl();
+
+  if(isset($_SESSION['tps_username'])){
+      $p_sesi = $_SESSION['tps_username'];
+  }else{
+      $p_sesi = null;
+  }
+
+
+  $s_linker = $fx->getuserdx($p_sesi);
+
+
+  require APP . 'view/arcade/gadx/index.php';
+
+}
+
+public function gadxplayer(){
+  $gx = new Gadxmdl();
+  $zuto = $gx->getengine();
+
+  if($zuto->gadx_power == 1){
+    $doko = $gx->getplayer();
+    require APP . 'view/arcade/gadx/_join.php';
+  }elseif($zuto->gadx_power == 2){
+    require APP . 'view/arcade/gadx/_gadxplayer.php';
+  }
+
+}
+
+public function gadxjoin(){
+  $gx = new Gadxmdl();
+  if(isset($_SESSION['tps_username'])){
+    $p_user = $_SESSION['tps_username'];
+  }else{
+    $p_user = null;
+  }
+
+  if($p_user != null){
+    $gx->insplayer($p_user);
+  }
+}
 
 //BETDX
 public function betdxoffline(){

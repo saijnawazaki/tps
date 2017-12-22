@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2017 at 08:00 AM
+-- Generation Time: Dec 22, 2017 at 10:39 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -75,6 +75,50 @@ CREATE TABLE `betdx_player` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `gadx_engine`
+--
+
+CREATE TABLE `gadx_engine` (
+  `id_gadx` int(11) NOT NULL,
+  `gadx_power` char(1) DEFAULT NULL,
+  `gadx_fase` char(1) DEFAULT NULL,
+  `gadx_end` datetime DEFAULT NULL,
+  `gadx_req` varchar(10) DEFAULT NULL,
+  `gadx_exp` int(11) DEFAULT NULL,
+  `gadx_gold` int(11) DEFAULT NULL,
+  `gadx_gift` varchar(100) DEFAULT NULL,
+  `gadx_sponsor` varchar(100) DEFAULT NULL,
+  `gadx_real` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `gadx_engine`
+--
+
+INSERT INTO `gadx_engine` (`id_gadx`, `gadx_power`, `gadx_fase`, `gadx_end`, `gadx_req`, `gadx_exp`, `gadx_gold`, `gadx_gift`, `gadx_sponsor`, `gadx_real`) VALUES
+(1, '1', '1', '2017-12-31 15:55:15', NULL, 100, 20, '1xx', 'asdasd', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gadx_player`
+--
+
+CREATE TABLE `gadx_player` (
+  `username` varchar(20) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `gadx_player`
+--
+
+INSERT INTO `gadx_player` (`username`, `timestamp`) VALUES
+('saijnawazaki', '2017-12-22 09:30:55');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pengguna`
 --
 
@@ -93,7 +137,8 @@ CREATE TABLE `pengguna` (
 --
 
 INSERT INTO `pengguna` (`username`, `password`, `fullname`, `type_account`, `live_account`, `up_account`, `session_id`) VALUES
-('admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', 'admin', '2017-12-13 02:54:50', '2017-12-21 06:59:08', NULL);
+('admin', '21232f297a57a5a743894a0e4a801fc3', 'Administrator', 'admin', '2017-12-13 02:54:50', '2017-12-21 06:59:08', NULL),
+('saijnawazaki', 'e1f1c9fec0579dfe4888b17e224e3fda', 'Julianto Chai', 'admin', '2017-12-22 02:29:34', '2017-12-22 06:26:45', 'd0ircv6ifq3qa7nsipd0edlom5');
 
 -- --------------------------------------------------------
 
@@ -114,7 +159,8 @@ CREATE TABLE `pengguna_detail` (
 --
 
 INSERT INTO `pengguna_detail` (`username`, `lineid`, `nohp`, `email`, `pp`) VALUES
-('admin', NULL, NULL, NULL, 'no_pp.png');
+('admin', NULL, NULL, NULL, 'no_pp.png'),
+('saijnawazaki', 'saijnawazaki', '081311111111', 'saijnawazaki@manastudioid.com', 'no_pp.png');
 
 -- --------------------------------------------------------
 
@@ -133,7 +179,8 @@ CREATE TABLE `pengguna_permainan` (
 --
 
 INSERT INTO `pengguna_permainan` (`username`, `exp`, `gold`) VALUES
-('admin', 1, 2);
+('admin', 1, 2),
+('saijnawazaki', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -172,6 +219,18 @@ ALTER TABLE `betdx_player`
   ADD PRIMARY KEY (`username`);
 
 --
+-- Indexes for table `gadx_engine`
+--
+ALTER TABLE `gadx_engine`
+  ADD PRIMARY KEY (`id_gadx`);
+
+--
+-- Indexes for table `gadx_player`
+--
+ALTER TABLE `gadx_player`
+  ADD PRIMARY KEY (`username`);
+
+--
 -- Indexes for table `pengguna`
 --
 ALTER TABLE `pengguna`
@@ -206,7 +265,7 @@ ALTER TABLE `penghargaan`
 -- AUTO_INCREMENT for table `betdx_log`
 --
 ALTER TABLE `betdx_log`
-  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_log` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

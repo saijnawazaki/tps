@@ -25,7 +25,7 @@ class Universalmdl extends Model
         $query = $this->db->prepare($sql);
         $parameters = array(':a' => $id, ':b' => $nama, ':c' => $user, ':d' => $konten);
         $query->execute($parameters);
-        
+
     }
 
     public function getserverdt()
@@ -35,6 +35,15 @@ class Universalmdl extends Model
 
         $query->execute();
         return $query->fetch();
+    }
+
+    public function getplayernb()
+    {
+        $sql = "SELECT username, fullname FROM pengguna";
+        $query = $this->db->prepare($sql);
+
+        $query->execute();
+        return $query->fetchAll();
     }
 
     public function getplayer($x)

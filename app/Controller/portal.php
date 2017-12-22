@@ -3,6 +3,7 @@
 namespace Sei\Controller;
 
 use Sei\Model\Linkermdl;
+use Sei\Model\Universalmdl;
 
 class Portal
 {
@@ -26,5 +27,11 @@ class Portal
         require APP . 'view/portal/index.php';
      }
 
+     public function namesboard()
+     {
+       $cx = new Universalmdl();
+       $nobu = $cx->getplayernb();
+       require APP . 'view/portal/namesboard.php';
+     }
 
 }
