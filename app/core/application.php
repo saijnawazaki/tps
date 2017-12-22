@@ -19,26 +19,27 @@ class Application
      */
     public function __construct()
     {
-
+      date_default_timezone_set('Asia/Jakarta');
         // create array with URL parts in $url
         $this->splitUrl();
 
         // check for controller: no controller given ? then load start-page
         if (!$this->url_controller) {
-            $controller = "\\Sei\\Controller\\" . sei_default_controller;
+		$controller = "\\Sei\\Controller\\" . sei_default_controller;
             $page = new $controller();
             $page->index();
 
-        } elseif (file_exists(APP . 'Controller/' . $this->url_controller . '.php')) {
+        } elseif (file_exists(APP . 'Controller/' . ucfirst($this->url_controller) . '.php')) {
             // here we did check for controller: does such a controller exist ?
 
             // if so, then load this file and create this controller
             // like \Mini\Controller\CarController
-            $controller = "\\Sei\\Controller\\" . $this->url_controller;
+            $controller = "\\Sei\\Controller\\" . ucfirst($this->url_controller);
             $this->url_controller = new $controller();
 
             // check for method: does such a method exist in the controller ?
-            if (method_exists($this->url_controller, $this->url_action)) {
+            if (method_exists($this->url_controller, $this->url_action) &&
+                is_callable(array($this->url_controller, $this->url_action))) {
 
                 if (!empty($this->url_params)) {
                     // Call the method and pass arguments to it
@@ -52,8 +53,7 @@ class Application
                 if (strlen($this->url_action) == 0) {
                     // no action defined: call the default index() method of a selected controller
                     $this->url_controller->index();
-                }
-                else {
+                } else {
                     header('location: ' . URL . 'error');
                 }
             }

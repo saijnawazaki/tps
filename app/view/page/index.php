@@ -20,6 +20,7 @@
       <ul class="list-group">
         <li class="list-group-item"><a href="<?= URL ?>page/tos">Terms of Service</a></li>
         <li class="list-group-item"><a href="<?= URL ?>page/pp">Privacy Policy</a></li>
+        <li class="list-group-item"><a href="<?= URL ?>page/eula">End User License Agreement</a></li>
 
       </ul>
 
