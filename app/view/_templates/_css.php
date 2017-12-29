@@ -7,7 +7,7 @@
 <![endif]-->
 
 <link rel="stylesheet" href="<?= URL ?>assets/vendor/davegandy/font-awesome/css/font-awesome.min.css">
-
+<link rel="stylesheet" href="<?= URL ?>assets/vendor/lipis/flag-icon/css/flag-icon.min.css">
 <style>
 .tooltip-inner {
     text-align: left;

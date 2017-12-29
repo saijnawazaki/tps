@@ -53,6 +53,16 @@ class Linkermdl extends Model
         return $query->fetch();
     }
 
+    public function getfullnameuser($x)
+    {
+        $sql = "SELECT fullname FROM pengguna WHERE username = :x";
+        $query = $this->db->prepare($sql);
+        $parameters = array(':x' => $x);
+        $query->execute($parameters);
+
+        return $query->fetch();
+    }
+
     public function cekuseremaildx($x)
     {
         $sql = "SELECT username FROM pengguna_detail WHERE email = :x";

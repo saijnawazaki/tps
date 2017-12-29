@@ -57,7 +57,18 @@ class Universalmdl extends Model
 
     public function getplayersolo($x)
     {
-        $sql = "SELECT a.username, a.fullname, b.exp, b.gold, c.lineid, c.nohp, c.email, c.pp FROM pengguna a, pengguna_permainan b, pengguna_detail c WHERE a.username = b.username AND a.username = c.username AND a.username = :x";
+        $sql = "SELECT a.username, a.fullname, b.exp, b.gold, c.lineid, c.nohp, c.email, c.pp,
+        (SELECT fullname FROM pengguna_komunitas d WHERE d.id_pk = a.id_pk) as 'pk_fullname',
+        (SELECT gender FROM pengguna_komunitas d WHERE d.id_pk = a.id_pk) as 'pk_gender',
+        (SELECT birthday FROM pengguna_komunitas d WHERE d.id_pk = a.id_pk) as 'pk_birthday',
+        (SELECT birthplace FROM pengguna_komunitas d WHERE d.id_pk = a.id_pk) as 'pk_birthplace',
+        (SELECT bloodtype FROM pengguna_komunitas d WHERE d.id_pk = a.id_pk) as 'pk_bloodtype',
+        (SELECT place FROM pengguna_komunitas d WHERE d.id_pk = a.id_pk) as 'pk_place'
+
+        FROM pengguna a, pengguna_permainan b, pengguna_detail c
+        WHERE a.username = b.username
+        AND a.username = c.username
+        AND a.username = :x";
         $query = $this->db->prepare($sql);
         $parameters = array(':x' => $x);
         $query->execute($parameters);

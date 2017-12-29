@@ -42,5 +42,6 @@ csrfProtector::init();
 // load application class
 use Sei\Core\Application;
 
+
 // start the application
 $app = new Application();
